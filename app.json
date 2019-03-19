@@ -1,0 +1,38 @@
+{
+  "name": "Mozi",
+  "displayName": "Mozi",
+  "window": {
+     "headerBackgroundColor": "#262a37"
+  },
+  "tabBar": {
+     "inactiveTintColor": "#949494",
+     "backgroundColor": "#ffffff",
+     "activeTintColor": "#42c02e",
+     "list": {
+         "Mo": {
+            "icoPath": "",
+            "selectedIconPath": "",
+            "icoName": "ios-home",
+            "text": "首页"
+         },
+         "Zi": {
+           "icoPath": "",
+           "selectedIconPath": "",
+           "icoName": "ios-planet",
+           "text": "设备"
+         },
+         "Gong": {
+           "icoPath": "",
+           "selectedIconPath": "",
+           "icoName": "ios-analytics",
+           "text": "消息"
+         },
+         "Cheng": {
+           "icoPath": "",
+           "selectedIconPath": "",
+           "icoName": "ios-contacts",
+           "text": "我的"
+         }
+     }
+  }
+}
