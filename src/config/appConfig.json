@@ -2,7 +2,7 @@
   "name": "Mozi",
   "displayName": "Mozi",
   "window": {
-     "headerBackgroundColor": "#262a37"
+     "headerBackgroundColor": "#ffffff"
   },
   "tabBar": {
      "inactiveTintColor": "#949494",

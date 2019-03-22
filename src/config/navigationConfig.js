@@ -1,8 +1,8 @@
 import React from 'react';
 import { Image, } from 'react-native';
 
-import NavigationButton from './components/NavigationButton';
-import { tabBar, window, } from '../app';
+import NavigationButton from '../components/NavigationButton';
+import { tabBar, window, } from './appConfig';
 
 const BottomTabNavigatorConfig = options => {
   const { inactiveTintColor, activeTintColor, list, } = tabBar;

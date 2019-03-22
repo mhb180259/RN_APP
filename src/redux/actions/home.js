@@ -1,4 +1,4 @@
-import { GET, } from '../../commons/utils/request';
+import { GET, } from '../../utils/request';
 import { movieList, } from '../constants/urls';
 import * as types from '../constants/actionTypes';
 

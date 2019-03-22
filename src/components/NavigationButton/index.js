@@ -24,7 +24,6 @@ const creatIcon = props => {
 
 const runCallback = options => {
   const { callback, } = options;
-
   const buttons =
     callback && typeof callback === 'function' ? (
       <TouchableOpacity onPress={callback}>{creatIcon(options)}</TouchableOpacity>

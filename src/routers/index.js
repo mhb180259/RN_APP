@@ -1,20 +1,35 @@
+import { createBottomTabNavigator, createStackNavigator, createAppContainer, } from 'react-navigation';
+import { BottomTabNavigatorConfig, StackNavigatorConfig, } from '../config/navigationConfig';
+import * as pages from './path';
 
-import Mo from '../containers/mo';
-import Zi from '../containers/zi';
-import Gong from '../containers/gong';
-import Cheng from '../containers/cheng';
-import Web from '../containers/demo/web';
-import Back from '../containers/demo/back';
-import Backa from '../containers/demo/backa';
-import HeaderImageScrollView from '../containers/gong/HeaderImageScrollView';
 
-module.exports = {
-  Mo,
-  Zi,
-  Gong,
-  Cheng,
-  Web,
-  Back,
-  Backa,
-  HeaderImageScrollView,
+const TabNav = createBottomTabNavigator(
+  {
+    Mo: pages.Mo,
+    Zi: pages.Zi,
+    Gong: pages.Gong,
+    Cheng: pages.Cheng,
+  },
+  BottomTabNavigatorConfig({
+    initialRouteName: 'Mo',
+  }),
+);
+
+TabNav.navigationOptions = ({ navigation, }) => {
+  // 设置tabBar的标题
+  const { routes, index, } = navigation.state;
+  const { routeName, } = routes[index];
+  return pages[routeName].navigationOptions;
 };
+
+const AppStack = createStackNavigator(
+  {
+    Root: TabNav,
+    Back: pages.Back,
+  },
+  StackNavigatorConfig({
+    initialRouteName: 'Root',
+  }),
+);
+
+export default createAppContainer(AppStack);

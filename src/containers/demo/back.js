@@ -1,6 +1,6 @@
 import React, { Component, } from 'react';
 import { StyleSheet, Text, View, } from 'react-native';
-import connect from '../../app/store/connect';
+import connect from '../../redux/store/connect';
 import NavigationButton from '../../components/NavigationButton';
 
 const styles = StyleSheet.create({

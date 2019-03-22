@@ -19,7 +19,6 @@ const getHome = state => {
 };
 
 export default createSelector(getHome, home => {
-  console.log('redu-home--', home);
   return {
     home,
   };

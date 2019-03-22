@@ -1,9 +1,9 @@
 import React, { Component, } from 'react';
-import { BackHandler, ToastAndroid, Platform, View, Text } from 'react-native';
+import { BackHandler, ToastAndroid, Platform, } from 'react-native';
 import { connect, } from 'react-redux';
 import { NavigationActions, } from 'react-navigation';
 import JPushModule from 'jpush-react-native';
-import Routers from './routers/app';
+import Routers from '../routers';
 
 @connect(state => ({ nav: state.nav, }))
 export default class AppNavigationState extends Component {
