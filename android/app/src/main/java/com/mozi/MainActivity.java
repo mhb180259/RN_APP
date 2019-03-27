@@ -6,8 +6,6 @@ import com.facebook.react.ReactActivity;
 
 import org.devio.rn.splashscreen.SplashScreen; // 1.导入启动屏包
 
-import cn.jpush.android.api.JPushInterface;
-
 public class MainActivity extends ReactActivity {
 
 
@@ -24,19 +22,16 @@ public class MainActivity extends ReactActivity {
     protected void onCreate(Bundle savedInstanceState) { // 2. 显示启动方法
         SplashScreen.show(this);
         super.onCreate(savedInstanceState);
-        JPushInterface.init(this);
 
     }
     @Override
     protected void onPause() {
         super.onPause();
-        JPushInterface.onPause(this);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        JPushInterface.onResume(this);
     }
 
     @Override

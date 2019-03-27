@@ -51,7 +51,7 @@
 		71BAD735686C47A8884FFDE5 /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 67EEBE3037544141B01EF948 /* Entypo.ttf */; };
 		744BDFB363F24CA1B08CBCBE /* libRNDeviceInfo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D1200F3E2ABE4650B892F54C /* libRNDeviceInfo.a */; };
 		7503964D7F33441489D8270D /* libSplashScreen.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C959D21FA764B0396428649 /* libSplashScreen.a */; };
-		8292B522BA374F13A79EFE4E /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 647EAC5399ED42D48E250864 /* UserNotifications.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		8292B522BA374F13A79EFE4E /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 647EAC5399ED42D48E250864 /* UserNotifications.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		832583A23FB346DC968C09BF /* libRNVectorIcons.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3621F4032F9435D945418CE /* libRNVectorIcons.a */; };
 		866F2DD2EDCC4B7F85681B54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC5A5E28735F4B90BAD770D6 /* Foundation.framework */; };
@@ -62,7 +62,7 @@
 		A4AD63F3DCE541478C34BE53 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8BFE1E3A86524474878D8D91 /* FontAwesome.ttf */; };
 		A811A90E3AFE4F2BAF8260FE /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B78D1FF8D67D492CAA460AB3 /* CoreFoundation.framework */; };
 		B7B97B70282F47109C6D884F /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A8364BB7718B488B96D7BA46 /* Ionicons.ttf */; };
-		BBDD151508174251B2D70858 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B8AA8A02B4B44F89690AF68 /* UIKit.framework */; };
+		BBDD151508174251B2D70858 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B8AA8A02B4B44F89690AF68 /* UIKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		CDADE8F99C4D4C33871032FE /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9C3900C66074853937A0E3B /* Foundation.ttf */; };
 		DAAE26B639FC4195BA20D306 /* libCodePush.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 839FB109878741C0A05AD9D7 /* libCodePush.a */; };
 		DF57E95F8B374A34849637C8 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = EF7963DBAF3E4F07AB3FECF6 /* libz.tbd */; };
@@ -942,7 +942,7 @@
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
-								enabled = 1;
+								enabled = 0;
 							};
 							com.apple.Push = {
 								enabled = 1;
@@ -965,6 +965,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -1602,8 +1603,6 @@
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 					"$(SRCROOT)/../node_modules/react-native-splash-screen/ios",
 					"$(SRCROOT)/../node_modules/react-native-code-push/ios/CodePush/**",
-					"$(SRCROOT)/../node_modules/jpush-react-native/ios/RCTJPushModule",
-					"$(SRCROOT)/../node_modules/jcore-react-native/ios/RCTJCoreModule",
 					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-device-info/ios/RNDeviceInfo",
 				);
@@ -1637,8 +1636,6 @@
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 					"$(SRCROOT)/../node_modules/react-native-splash-screen/ios",
 					"$(SRCROOT)/../node_modules/react-native-code-push/ios/CodePush/**",
-					"$(SRCROOT)/../node_modules/jpush-react-native/ios/RCTJPushModule",
-					"$(SRCROOT)/../node_modules/jcore-react-native/ios/RCTJCoreModule",
 					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-device-info/ios/RNDeviceInfo",
 				);

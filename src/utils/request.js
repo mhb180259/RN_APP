@@ -1,8 +1,8 @@
 import { Platform, AsyncStorage, } from 'react-native';
-import { IOS_LXY_KEY, ANDROID_LXY_DKEY, } from '../../redux/constants/apiConfig';
+import { IOS_LXY_KEY, ANDROID_LXY_DKEY, } from '../redux/constants/apiConfig';
 import { hexMD5, } from './md5';
 import { sortObject, setUrlK, formData, } from './util';
-import { appid, platform, } from '../../redux/constants/urls';
+import { appid, platform, } from '../redux/constants/urls';
 
 const signKey = Platform.OS === 'android' ? ANDROID_LXY_DKEY : IOS_LXY_KEY;
 
