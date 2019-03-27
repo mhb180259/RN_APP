@@ -3,7 +3,6 @@
   "extends": "airbnb",
   "plugins": ["react", "jsx-a11y", "import"],
   "rules": {
-    "no-unused-vars": false,
     "no-console": 0,
     "no-mixed-operators": 0,
     "no-underscore-dangle": 0,
