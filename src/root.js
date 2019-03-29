@@ -5,7 +5,6 @@ import configureStore from './redux/store/configureStore';
 import App from './containers/index';
 
 const store = configureStore();
-
 export default class Root extends Component {
   componentDidMount() {
     SplashScreen.hide(); // 隐藏启动屏

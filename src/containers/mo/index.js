@@ -1,28 +1,25 @@
-import React, { Component, } from 'react';
-import { StyleSheet, Text, View, } from 'react-native';
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-});
+import React, {
+  Component,
+} from 'react';
+import {
+  View,
+} from 'react-native';
+import {
+  VideoPlayer,
+} from "../../components";
+import styles from './style';
 
 export default class Mo extends Component {
   static navigationOptions = {
     headerTitle: '首页',
   };
+
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>首页</Text>
+        <VideoPlayer
+          source={{ uri: 'https: //vfx.mtime.cn/Video/2017/03/31/mp4/170331093811717750.mp4', }}
+        />
       </View>
     );
   }

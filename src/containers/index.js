@@ -30,11 +30,7 @@ export default class AppNavigationState extends Component {
 
   render() {
     return (
-      <Routers
-        ref={ref => {
-          this.root = ref;
-        }}
-      />
+      <Routers />
     );
   }
 }

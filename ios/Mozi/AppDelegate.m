@@ -12,7 +12,7 @@
 #ifdef NSFoundationVersionNumber_iOS_9_x_Max
 #import <UserNotifications/UserNotifications.h>
 #endif
-
+#import <AVFoundation/AVFoundation.h>
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
 #import "RNSplashScreen.h"  // 1. 导入启动屏包
@@ -23,12 +23,12 @@
 {
   NSURL *jsCodeLocation;
 
-    #ifdef DEBUG
-        jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index" fallbackResource:nil];
-    #else
-        jsCodeLocation = [CodePush bundleURL];
-    #endif
-
+  #ifdef DEBUG
+      jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index" fallbackResource:nil];
+  #else
+      jsCodeLocation = [CodePush bundleURL];
+  #endif
+  [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryAmbient error:nil];
   RCTRootView *rootView = [[RCTRootView alloc] initWithBundleURL:jsCodeLocation
                                                       moduleName:@"Mozi"
                                                initialProperties:nil
