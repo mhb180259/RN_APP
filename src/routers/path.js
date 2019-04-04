@@ -2,7 +2,7 @@ import Mo from '../containers/mo';
 import Zi from '../containers/zi';
 import Gong from '../containers/gong';
 import Cheng from '../containers/cheng';
-import Back from '../containers/demo/back';
+import Back from '../containers/others/back';
 
 module.exports = {
   Mo,

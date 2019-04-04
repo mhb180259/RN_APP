@@ -3,7 +3,9 @@ import React, {
 } from 'react';
 import {
   View,
+  Text,
 } from 'react-native';
+
 
 export default class Zi extends Component {
   static navigationOptions = {
@@ -12,7 +14,7 @@ export default class Zi extends Component {
   render() {
     return (
       <View>
-        设备
+        <Text>{global.I18n.t('lang')}</Text>
       </View>
     );
   }

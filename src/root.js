@@ -1,7 +1,12 @@
-import React, { Component, } from 'react';
-import { Provider, } from 'react-redux';
+import React, {
+  Component,
+} from 'react';
+import {
+  Provider,
+} from 'react-redux';
 import SplashScreen from 'react-native-splash-screen';
 import configureStore from './redux/store/configureStore';
+import './language';
 import App from './containers/index';
 
 const store = configureStore();
