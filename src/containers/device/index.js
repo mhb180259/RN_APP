@@ -5,16 +5,24 @@ import React, {
 import {
   View,
   Text,
+  Image,
+  Button,
 } from 'react-native';
 import {
   VideoPlayer,
 } from "../../components";
 import Video from './video';
 import styles from './style';
+import {
+  IconFont
+} from '../../components'
 
 export default class Mo extends Component {
   static navigationOptions = {
-    headerTitle: '首页',
+    headerTitle: 'Device',
+    headerRight: (
+      <IconFont name="tips" size={16} style={{color: '#fff', marginRight: 10}}/>
+    ),
   };
 
   render() {

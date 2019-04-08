@@ -65,6 +65,7 @@
 		A4AD63F3DCE541478C34BE53 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8BFE1E3A86524474878D8D91 /* FontAwesome.ttf */; };
 		A724089DD5CF40DBB0275087 /* libRNI18n-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 33FE5919BADD4BCAAC6E333A /* libRNI18n-tvOS.a */; };
 		A811A90E3AFE4F2BAF8260FE /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B78D1FF8D67D492CAA460AB3 /* CoreFoundation.framework */; };
+		ACBE11AF225B2006002673A3 /* iconfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ACBE11AE225B2006002673A3 /* iconfont.ttf */; };
 		AD72A7F9E91C4FFBA72B57F9 /* libRNCamera.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8620BB42201F457FB07949EA /* libRNCamera.a */; };
 		B7B97B70282F47109C6D884F /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A8364BB7718B488B96D7BA46 /* Ionicons.ttf */; };
 		BBDD151508174251B2D70858 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B8AA8A02B4B44F89690AF68 /* UIKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
@@ -503,6 +504,7 @@
 		937452C01F5A9B5E00F01FDA /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Fonts; path = "../node_modules/react-native-vector-icons/Fonts"; sourceTree = "<group>"; };
 		A8364BB7718B488B96D7BA46 /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
 		AC55D3312255A20900A225A7 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		ACBE11AE225B2006002673A3 /* iconfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = iconfont.ttf; sourceTree = "<group>"; };
 		B04A5E546465440EA935C9FC /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
 		B3621F4032F9435D945418CE /* libRNVectorIcons.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNVectorIcons.a; sourceTree = "<group>"; };
 		B78D1FF8D67D492CAA460AB3 /* CoreFoundation.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
@@ -678,6 +680,7 @@
 		13B07FAE1A68108700A75B9A /* Mozi */ = {
 			isa = PBXGroup;
 			children = (
+				ACBE117F225B1F84002673A3 /* fonts */,
 				936F60A521ECD1B300655585 /* Mozi.entitlements */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
@@ -933,6 +936,14 @@
 				AC7136C92253161100729688 /* libRCTOrientation.a */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		ACBE117F225B1F84002673A3 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				ACBE11AE225B2006002673A3 /* iconfont.ttf */,
+			);
+			name = fonts;
 			sourceTree = "<group>";
 		};
 		F4D52C9CB9284B999FE4CAFC /* Frameworks */ = {
@@ -1551,6 +1562,7 @@
 				937452C11F5A9B5E00F01FDA /* Fonts in Resources */,
 				CDADE8F99C4D4C33871032FE /* Foundation.ttf in Resources */,
 				B7B97B70282F47109C6D884F /* Ionicons.ttf in Resources */,
+				ACBE11AF225B2006002673A3 /* iconfont.ttf in Resources */,
 				916BBE5B3042403FBF88B500 /* MaterialCommunityIcons.ttf in Resources */,
 				F02B6C54DD3D4ACBB957CE91 /* MaterialIcons.ttf in Resources */,
 				0A94FA42FA734AFBB7EE42A6 /* Octicons.ttf in Resources */,

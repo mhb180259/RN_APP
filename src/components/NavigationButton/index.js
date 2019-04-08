@@ -1,29 +1,28 @@
 import React from 'react';
-import { TouchableOpacity, } from 'react-native';
+import {
+  TouchableOpacity,
+} from 'react-native';
 import Icon from '../Icon';
 
-const typeMap = {
-  share: 'md-share-alt',
-  search: 'ios-search',
-  back: 'ios-arrow-back',
-  reload: 'ion-ios-reload',
-  delete: 'ios-trash-outline',
-};
-
-const iStyle = {
+const xStyle = {
   paddingLeft: 8,
   paddingRight: 8,
+  paddingTop: 5,
 };
 
 const creatIcon = props => {
-  const { name, usename = false, size = 30, color = 'white', } = props;
-  const names = usename ? name : typeMap[name];
-  const styles = usename ? '' : iStyle;
-  return <Icon name={names} style={styles} size={size} color={color} />;
+  const {
+    name,
+    size = 28,
+    color = 'white',
+  } = props;
+  return <Icon name={name} style={xStyle} size={size} color={color} />;
 };
 
 const runCallback = options => {
-  const { callback, } = options;
+  const {
+    callback,
+  } = options;
   const buttons =
     callback && typeof callback === 'function' ? (
       <TouchableOpacity onPress={callback}>{creatIcon(options)}</TouchableOpacity>

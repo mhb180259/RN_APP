@@ -1,13 +1,15 @@
-import Mo from '../containers/mo';
-import Zi from '../containers/zi';
-import Gong from '../containers/gong';
-import Cheng from '../containers/cheng';
+import Device from '../containers/device';
+import Message from '../containers/message';
+import Add from '../containers/add';
+import Mall from '../containers/mall';
+import Me from '../containers/me';
 import Back from '../containers/others/back';
 
 module.exports = {
-  Mo,
-  Zi,
-  Gong,
-  Cheng,
+  Device,
+  Message,
+  Add,
+  Mall,
+  Me,
   Back,
 };

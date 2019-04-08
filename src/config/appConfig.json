@@ -2,37 +2,43 @@
   "name": "Mozi",
   "displayName": "Mozi",
   "window": {
-     "headerBackgroundColor": "#ffffff"
+    "headerBackgroundColor": "#00B9FC"
   },
   "tabBar": {
-     "inactiveTintColor": "#949494",
-     "backgroundColor": "#ffffff",
-     "activeTintColor": "#42c02e",
-     "list": {
-         "Mo": {
-            "icoPath": "",
-            "selectedIconPath": "",
-            "icoName": "ios-home",
-            "text": "首页"
-         },
-         "Zi": {
-           "icoPath": "",
-           "selectedIconPath": "",
-           "icoName": "ios-planet",
-           "text": "设备"
-         },
-         "Gong": {
-           "icoPath": "",
-           "selectedIconPath": "",
-           "icoName": "ios-analytics",
-           "text": "消息"
-         },
-         "Cheng": {
-           "icoPath": "",
-           "selectedIconPath": "",
-           "icoName": "ios-contacts",
-           "text": "我的"
-         }
-     }
+    "inactiveTintColor": "#979797",
+    "backgroundColor": "#ffffff",
+    "activeTintColor": "#00B9FC",
+    "list": {
+      "Device": {
+        "icoPath": "",
+        "selectedIconPath": "",
+        "icoName": "device",
+        "text": "Device"
+      },
+      "Message": {
+        "icoPath": "",
+        "selectedIconPath": "",
+        "icoName": "message",
+        "text": "Message"
+      },
+      "Add": {
+        "icoPath": "",
+        "selectedIconPath": "",
+        "icoName": "add",
+        "text": " "
+      },
+      "Mall": {
+        "icoPath": "",
+        "selectedIconPath": "",
+        "icoName": "mall",
+        "text": "Mail"
+      },
+      "Me": {
+        "icoPath": "",
+        "selectedIconPath": "",
+        "icoName": "me",
+        "text": "Me"
+      }
+    }
   }
 }
