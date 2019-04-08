@@ -6,16 +6,24 @@ import {
   View,
   Text,
   Image,
-  Button,
+  FlatList,
+  Dimensions,
+  TouchableHighlight,
 } from 'react-native';
-import {
-  VideoPlayer,
-} from "../../components";
-import Video from './video';
 import styles from './style';
 import {
   IconFont
-} from '../../components'
+} from '../../components';
+const screenWidth = Dimensions.get('window').width;
+
+const videoList = [
+  "../../assets/img/video.png",
+  "../../assets/img/video.png",
+  "../../assets/img/video.png",
+  "../../assets/img/video.png",
+  "../../assets/img/video.png",
+];
+
 
 export default class Mo extends Component {
   static navigationOptions = {
@@ -28,17 +36,29 @@ export default class Mo extends Component {
   render() {
     return (
       <View style={styles.container}>
-        {/* <VideoPlayer
-          source={{ uri: 'https://vfx.mtime.cn/Video/2017/03/31/mp4/170331093811717750.mp4', }}
-        /> */}
-        <Text onPress={this._goPage}>点击去下一页</Text>
+        <FlatList
+          data={videoList}
+          renderItem={this._renderRow}
+          keyExtractor={(item) => item}
+        />
       </View>
     );
   }
-  _goPage = () => {
-    const {
-      navigation,
-    } = this.props;
-    navigation.navigate('Back');
+  _renderRow = (item) => {
+    let url = item.item;
+    return (
+      <TouchableHighlight  underlayColor={'#dcdcdc'} onPress={() => {this.itemSelected(url)}}>
+        <View style={styles.video}>
+          <Image resizeMode="stretch" style={{height: 171, width: screenWidth - 20}} source={require('../../assets/img/video.png')}/>
+          <View style={styles.intro}>
+            <Text style={{fontSize: 16, marginLeft: 15}}>Ranger-278C</Text>
+            <Text style={{fontSize: 10, marginLeft: 9, color: '#696969'}}>2019/03/20 11:40</Text>
+          </View>
+        </View>
+      </TouchableHighlight>
+    )
+  };
+  itemSelected = () => {
+    this.props.navigation.navigate('VideoDetails');
   }
 }

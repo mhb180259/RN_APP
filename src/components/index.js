@@ -2,7 +2,7 @@ import Icon from './Icon';
 import ListItem from './ListItem';
 import NavigationButton from './NavigationButton';
 import ListParagraph from './ListParagraph';
-import VideoPlayer from './VideoPlayer';
+import VideoPlayer from './VideoPlayer/VideoPlayer.js';
 import IconFont from './IconFont';
 
 module.exports = {

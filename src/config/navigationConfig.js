@@ -57,7 +57,7 @@ const BottomTabNavigatorConfig = options => {
           tabBarIcon: ({
             tintColor,
           }) => {
-            return <NavigationButton name={icoName} size={26} color={tintColor} usename />;
+            return <NavigationButton name={icoName} size={24} color={tintColor} usename />;
           },
           tabBarLabel: text,
         };
@@ -78,16 +78,16 @@ const StackNavigatorConfig = options => {
   } = options;
   const {
     headerBackTitle = null,
-    headerTintColor = '#FFFFFF',
-    gesturesEnabled = true,
-    headerBackgroundColor = '#262a37',
-    headerTitleStyle = {
-      alignSelf: 'center',
-      fontSize: 18,
-      flex: 1,
-      textAlign: 'center',
-      color: '#FFFFFF',
-    },
+      headerTintColor = '#FFFFFF',
+      gesturesEnabled = true,
+      headerBackgroundColor = '#262a37',
+      headerTitleStyle = {
+        alignSelf: 'center',
+        fontSize: 18,
+        flex: 1,
+        textAlign: 'center',
+        color: '#FFFFFF',
+      },
   } = window || {};
   return {
     initialRouteName,

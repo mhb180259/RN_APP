@@ -38,7 +38,7 @@ TabNav.navigationOptions = ({
 
 const AppStack = createStackNavigator({
   Root: TabNav,
-  Back: pages.Back,
+  VideoDetails: pages.VideoDetails,
 },
 StackNavigatorConfig({
   initialRouteName: 'Root',

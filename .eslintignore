@@ -6,3 +6,5 @@ ios/
 android/
 src/utils/
 src/redux/
+src/assets/
+src/config/
