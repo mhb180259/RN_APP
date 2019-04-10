@@ -31,13 +31,37 @@
         "icoPath": "",
         "selectedIconPath": "",
         "icoName": "mall",
-        "text": "Mail"
+        "text": "Mall"
       },
       "Me": {
         "icoPath": "",
         "selectedIconPath": "",
         "icoName": "me",
         "text": "Me"
+      },
+      "Home": {
+        "icoPath": "",
+        "selectedIconPath": "",
+        "icoName": "message",
+        "text": "Home"
+      },
+      "Category": {
+        "icoPath": "",
+        "selectedIconPath": "",
+        "icoName": "add",
+        "text": "Category"
+      },
+      "Cart": {
+        "icoPath": "",
+        "selectedIconPath": "",
+        "icoName": "mall",
+        "text": "Cart"
+      },
+      "MyMall": {
+        "icoPath": "",
+        "selectedIconPath": "",
+      "icoName": "mymall",
+        "text": "MyMall"
       }
     }
   }

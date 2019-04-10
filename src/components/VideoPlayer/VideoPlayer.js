@@ -32,7 +32,10 @@ export default class VideoPlayer extends React.Component {
     videoCover: '', // 视频的封面图地址
     videoTitle: '', // 视频的标题
     enableSwitchScreen: true, // 是否允许视频切换大小
-    tag: 0,
+    style: {
+      position: 'relative',
+      left: 10,
+    }
   };
 
   constructor(props) {
@@ -42,9 +45,8 @@ export default class VideoPlayer extends React.Component {
       hasCover = false;
     }
     this.state = {
-      x: 0,
-      videoWidth: screenWidth,
-      videoHeight: defaultVideoHeight,
+      videoWidth: this.props.videoWidth,
+      videoHeight: this.props.videoHeight,
       videoUrl: this.props.videoURL,
       videoCover: this.props.videoCover,
       videoTitle: this.props.videoTitle,
@@ -70,7 +72,7 @@ export default class VideoPlayer extends React.Component {
   render() {
     return (
       <View
-        style={[ { width: this.state.videoWidth, height: this.state.videoHeight, backgroundColor: '#000', }, this.props.style, ]}
+        style={[ { width: this.state.videoWidth, height: this.state.videoHeight, backgroundColor: '#000',}, !this.state.isFullScreen ? this.props.style : '', ]}
       >
         <Video
           ref={(ref) => { this.videoRef = ref; }}
@@ -80,7 +82,7 @@ export default class VideoPlayer extends React.Component {
           volume={this.state.volume}
           muted={this.state.isMuted}
           ignoreSilentSwitch={"ignore"}
-          style={{ position: 'absolute', left: this.state.x, top: 0, width: this.state.videoWidth - 2 * this.state.x, height: this.state.videoHeight, }}
+          style={{ position: 'absolute', left: 0, top: 0, width: this.state.videoWidth, height: this.state.videoHeight, }}
           paused={this.state.isPaused}
           onLoadStart={this._onLoadStart}
           onBuffer={this._onBuffering}
@@ -106,7 +108,7 @@ export default class VideoPlayer extends React.Component {
               left: 0,
               width: this.state.videoWidth,
               height: this.state.videoHeight,
-              backgroundColor: this.state.isPaused ? 'rgba(0, 0, 0, 0.2)' : 'transparent',
+              backgroundColor: "transparent",
               alignItems: 'center',
               justifyContent: 'center',
             }}
@@ -223,26 +225,6 @@ export default class VideoPlayer extends React.Component {
                   </View> : null
               }
             </View> : null
-        }
-        {
-          this.state.isFullScreen ? null :
-            <TouchableOpacity
-            style={{
-                position: 'absolute',
-                top: 10,
-                left: 10,
-                width: 44,
-                height: 44,
-                alignItems: 'center',
-                justifyContent: 'center',
-              }}
-            onPress={this._onTapBackButton}
-          >
-            <Image
-                source={require('./image/icon_back.png')}
-                style={{ width: 26, height: 26, }}
-              />
-          </TouchableOpacity>
         }
         {
           this.state.isFullScreen && this.state.isDefinitionShow ?
@@ -534,7 +516,7 @@ export function formatTime(second) {
   };
   return [zero(h), zero(i), zero(s), ].join(":");
 }
-export const screenWidth = Dimensions.get('window').width - 20;
+export const screenWidth = Dimensions.get('window').width;
 export const screenHeight = Dimensions.get('window').height;
 export const defaultVideoHeight = screenWidth * 9 / 16;
 export const isIPhoneX = DeviceInfo.isIPhoneX_deprecated;

@@ -23,12 +23,12 @@ const styles = StyleSheet.create({
 
 export default class Gong extends Component {
   static navigationOptions = {
-    headerTitle: '商城',
+    headerTitle: '分类',
   };
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>商城</Text>
+        <Text style={styles.welcome}>分类</Text>
       </View>
     );
   }

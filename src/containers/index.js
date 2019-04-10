@@ -12,20 +12,19 @@ import {
   NavigationActions,
 } from 'react-navigation';
 import Routers from '../routers';
-
+import MallRouters from '../routers/mallRouters.js';
 @connect(state => ({
   nav: state.nav,
+  base: state.base,
 }))
 export default class AppNavigationState extends Component {
   componentDidMount() {
     BackHandler.addEventListener('hardwareBackPress', this.onBackPress);
   }
-
   componentWillUnmount() {
     BackHandler.removeEventListener('hardwareBackPress', this.onBackPress);
     this.lastBackPressed = null;
   }
-
   onBackPress = () => {
     const {
       dispatch,
@@ -41,10 +40,10 @@ export default class AppNavigationState extends Component {
     dispatch(NavigationActions.back());
     return true;
   };
-
   render() {
-    return (
-      <Routers />
-    );
+    if (!this.props.base.gomall) {
+      return (<Routers />);
+    }
+    return (<MallRouters />);
   }
 }

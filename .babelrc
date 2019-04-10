@@ -2,13 +2,15 @@
   "presets": ["module:metro-react-native-babel-preset"],
   "sourceMaps": true,
   "plugins": [
-      ["@babel/plugin-proposal-decorators", { "legacy": true }],
-      ["@babel/transform-runtime", {
-         "helpers": true,
-         "regenerator": false
-       }]
+    ["@babel/plugin-proposal-decorators", {
+      "legacy": true
+    }],
+    ["@babel/transform-runtime", {
+      "helpers": true,
+      "regenerator": false
+    }],
   ],
-  "env": {
+  "esnv": {
     "production": {
       "plugins": ["transform-remove-console"]
     }

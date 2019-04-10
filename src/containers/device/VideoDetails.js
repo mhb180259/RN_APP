@@ -7,25 +7,39 @@ import {
   Text,
   View,
   BackHandler,
+  Platform,
+  NativeModules,
 } from 'react-native';
+import {
+  Header
+} from 'react-navigation';
 import VideoPlayer, {
-  defaultVideoHeight,
   isSystemIOS,
   statusBarHeight,
 } from "../../components/VideoPlayer/VideoPlayer.js";
 import Orientation from "react-native-orientation";
 import styles from './style';
 
+const {
+  StatusBarManager
+} = NativeModules;
+
+let STATUSBAR_HEIGHT = StatusBarManager.HEIGHT;
+if (Platform.OS === 'ios') {
+  StatusBarManager.getHeight((event) => {
+    STATUSBAR_HEIGHT = event.height;
+  })
+}
+
 export default class Back extends Component {
   static navigationOptions = {
-    headerTitle: 'Cue-47D9',
-  };
+    header: null,
+  }
 
   constructor(props) {
     super(props);
     this.state = {
       isFullScreen: false,
-      videoHeight: defaultVideoHeight,
     };
     BackHandler.addEventListener('hardwareBackPress', this._backButtonPress);
     Orientation.addOrientationListener(this._orientationDidChange);
@@ -39,7 +53,15 @@ export default class Back extends Component {
   render() {
     return (
       <View style={styles.videoContainer} onLayout={this._onLayoutChange}>
-        <View style={styles.videoTop}>
+        {
+          !this.state.isFullScreen ? <View>
+            <View style={{backgroundColor: '#00B9FC', height: STATUSBAR_HEIGHT}}></View>
+            <View style={{...styles.videoHeader, height: Header.HEIGHT - 20}}>
+              <Text style={{fontSize: 20, color: '#fff',}}>title</Text>
+            </View>
+          </View> : null
+        }
+        <View style={this.state.isFullScreen ? null : styles.videoTop}>
           <VideoPlayer
             ref={(ref) => this.videoPlayer = ref}
             videoURL="https://vfx.mtime.cn/Video/2017/03/31/mp4/170331093811717750.mp4"
@@ -81,15 +103,13 @@ export default class Back extends Component {
     if (isLandscape) {
       this.setState({
         isFullScreen: true,
-        videoHeight: height,
       });
       this.videoPlayer.updateLayout(width, height, true);
     } else {
       this.setState({
         isFullScreen: false,
-        videoHeight: width * 9 / 16,
       });
-      this.videoPlayer.updateLayout(width, width * 9 / 16, false);
+      this.videoPlayer.updateLayout(width - 20, width * 9 / 16, false);
     }
     Orientation.unlockAllOrientations();
   };

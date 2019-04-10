@@ -10,11 +10,16 @@ import {
   Dimensions,
   TouchableHighlight,
 } from 'react-native';
+import {
+  connect,
+} from 'react-redux';
 import styles from './style';
 import {
   IconFont
 } from '../../components';
-const screenWidth = Dimensions.get('window').width;
+import {
+  screenWidth,
+} from '../../config/constant.js';
 
 const videoList = [
   "../../assets/img/video.png",
@@ -24,18 +29,21 @@ const videoList = [
   "../../assets/img/video.png",
 ];
 
-
+@connect(state => ({
+  base: state.base,
+}))
 export default class Mo extends Component {
   static navigationOptions = {
     headerTitle: 'Device',
-    headerRight: (
-      <IconFont name="tips" size={16} style={{color: '#fff', marginRight: 10}}/>
-    ),
+    // headerRight: (
+    //   <IconFont name="tips" size={16} style={{color: '#fff', marginRight: 10}}/>
+    // ),
   };
 
   render() {
     return (
       <View style={styles.container}>
+        <Text>{this.props.base.show}</Text>
         <FlatList
           data={videoList}
           renderItem={this._renderRow}
@@ -59,6 +67,8 @@ export default class Mo extends Component {
     )
   };
   itemSelected = () => {
-    this.props.navigation.navigate('VideoDetails');
+    this.props.navigation.navigate('VideoDetails', {
+      title: 'Cue-47D9000',
+    });
   }
 }
