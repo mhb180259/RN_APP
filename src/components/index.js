@@ -4,8 +4,8 @@ import VideoPlayer from './VideoPlayer/VideoPlayer.js';
 import IconFont from './IconFont';
 
 module.exports = {
-	Icon,
-	NavigationButton,
-	VideoPlayer,
-	IconFont,
+  Icon,
+  NavigationButton,
+  VideoPlayer,
+  IconFont,
 };
