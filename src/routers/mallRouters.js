@@ -9,18 +9,14 @@ import {
 } from '../config/navigationConfig';
 import * as pages from './path';
 
-
 const TabNav = createBottomTabNavigator({
-    Home: pages.Home,
-    Category: pages.Category,
-    Cart: pages.Cart,
-    MyMall: pages.MyMall,
-  },
-  BottomTabNavigatorConfig({
-    initialRouteName: 'Home',
-  }),
-);
-
+  Home: pages.Home,
+  Category: pages.Category,
+  Cart: pages.Cart,
+  MyMall: pages.MyMall,
+}, BottomTabNavigatorConfig({
+  initialRouteName: 'Home',
+}), );
 TabNav.navigationOptions = ({
   navigation,
 }) => {
@@ -34,14 +30,10 @@ TabNav.navigationOptions = ({
   } = routes[index];
   return pages[routeName].navigationOptions;
 };
-
 const AppStack = createStackNavigator({
-    Root: TabNav,
-    // VideoDetails: pages.VideoDetails,
-  },
-  StackNavigatorConfig({
-    initialRouteName: 'Root',
-  }),
-);
-
+  RootMall: TabNav,
+  // VideoDetails: pages.VideoDetails,
+}, StackNavigatorConfig({
+  initialRouteName: 'RootMall',
+}), );
 export default createAppContainer(AppStack);

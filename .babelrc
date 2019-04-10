@@ -8,9 +8,9 @@
     ["@babel/transform-runtime", {
       "helpers": true,
       "regenerator": false
-    }],
+    }]
   ],
-  "esnv": {
+  "env": {
     "production": {
       "plugins": ["transform-remove-console"]
     }

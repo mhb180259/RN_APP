@@ -1,5 +1,6 @@
-import { AppRegistry, } from 'react-native';
+import {
+  AppRegistry,
+} from 'react-native';
+import App from './src/root';
 
-import Mozi from './src/root';
-
-AppRegistry.registerComponent('Mozi', () => Mozi);
+AppRegistry.registerComponent('Ucfer', () => App);

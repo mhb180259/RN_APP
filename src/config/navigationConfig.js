@@ -58,12 +58,12 @@ const BottomTabNavigatorConfig = options => {
         icoName,
         text,
       } = list[routeName];
-      if(routeName !== 'Add') {
+      if (routeName !== 'Add') {
         return {
           tabBarIcon: ({
             tintColor,
           }) => {
-            if(text === 'Mall') {
+            if (text === 'Mall') {
               return <NavigationButton callback={() => {
                 store.dispatch({type: types.GO_MALL, gomall: true})
               }} name={icoName} size={24} color={tintColor} usename />;
@@ -103,18 +103,24 @@ const StackNavigatorConfig = options => {
     cardStyle: {
       backgroundColor: '#F5FCFF',
     }, // 为各个页面设置统一的样式，比如背景色，字体大小等
-    defaultNavigationOptions: {
-      headerRight: (<View>
-          <IconFont name="tips" size={16} style={{color: '#fff', marginRight: 10}}/>
-          <Text>123</Text>
-        </View>),
-      headerBackTitle, // 返回按钮文字
-      headerTintColor, // 返回按钮颜色
-      gesturesEnabled, // 是否支持滑动返回
-      headerTitleStyle,
-      headerStyle: {
-        backgroundColor: headerBackgroundColor,
-      },
+    defaultNavigationOptions: ({
+      navigation,
+    }) => {
+      const {
+        routeName,
+      } = navigation.state;
+      return {
+        headerRight: routeName === 'Root' ? (<IconFont name="tips" size={16} style={{color: '#fff', marginRight: 10}}/>) : (<IconFont onPress={() => {
+                store.dispatch({type: types.GO_MALL, gomall: false})
+              }} name="device" size={16} style={{color: '#fff', marginRight: 10}}/>),
+        headerBackTitle, // 返回按钮文字
+        headerTintColor, // 返回按钮颜色
+        gesturesEnabled, // 是否支持滑动返回
+        headerTitleStyle,
+        headerStyle: {
+          backgroundColor: headerBackgroundColor,
+        },
+      };
     },
   };
 };

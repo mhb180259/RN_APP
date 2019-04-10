@@ -9,19 +9,15 @@ import {
 } from '../config/navigationConfig';
 import * as pages from './path';
 
-
 const TabNav = createBottomTabNavigator({
   Device: pages.Device,
   Message: pages.Message,
   Add: pages.Add,
   Mall: pages.Mall,
   Me: pages.Me,
-},
-BottomTabNavigatorConfig({
+}, BottomTabNavigatorConfig({
   initialRouteName: 'Device',
-}),
-);
-
+}), );
 TabNav.navigationOptions = ({
   navigation,
 }) => {
@@ -35,14 +31,10 @@ TabNav.navigationOptions = ({
   } = routes[index];
   return pages[routeName].navigationOptions;
 };
-
 const AppStack = createStackNavigator({
   Root: TabNav,
   VideoDetails: pages.VideoDetails,
-},
-StackNavigatorConfig({
+}, StackNavigatorConfig({
   initialRouteName: 'Root',
-}),
-);
-
+}), );
 export default createAppContainer(AppStack);
